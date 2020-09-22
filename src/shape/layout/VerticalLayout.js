@@ -108,7 +108,7 @@ draw2d.shape.layout.VerticalLayout = draw2d.shape.layout.Layout.extend(
   add: function (child, locator, index) {
     this._super(child, this.locator, index)
 
-    this.setDimension(1, 1)
+    //this.setDimension(1, 1)
 
     return this
   },

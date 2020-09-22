@@ -152,12 +152,21 @@ draw2d.shape.basic.Label = draw2d.SetFigure.extend(
       let lattr = this.calculateTextAttr()
       lattr.text = this.text
 
+      if (Object.getOwnPropertyNames(lattr).length === 0) {
+        return;
+      }
+
+      if (Object.getOwnPropertyNames(this.lastAppliedTextAttributes).length === 0 && this.text === "") {
+        return;
+      }
+
       let attrDiff = jsonUtil.flatDiff(lattr, this.lastAppliedTextAttributes)
-      this.lastAppliedTextAttributes = lattr
+      //this.lastAppliedTextAttributes = lattr
 
       // the two "attr" calls takes 2/3 of the complete method call (chrome performance check).
       // now we check if any changes happens and call this method only if necessary.
       if (Object.getOwnPropertyNames(attrDiff).length > 0) {
+	this.lastAppliedTextAttributes = lattr;
         this.svgNodes.attr(lattr)
         // set of the x/y must be done AFTER the font-size and bold has been set.
         // Reason: the getBBox method needs the font attributes for calculation
