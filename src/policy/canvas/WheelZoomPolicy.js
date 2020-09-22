@@ -74,9 +74,9 @@ draw2d.policy.canvas.WheelZoomPolicy = draw2d.policy.canvas.ZoomPolicy.extend(
     // mouse wheel is only supported if the user presses the shift key.
     // normally the canvas scrolls during mouseWheel usage.
     //
-    if (shiftKey === false) {
+    /*if (shiftKey === false) {
       return true
-    }
+    }*/
 
     wheelDelta = wheelDelta / 1024
 
