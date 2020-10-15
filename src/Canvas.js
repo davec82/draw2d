@@ -659,7 +659,7 @@ draw2d.Canvas = Class.extend(
         this.initialWidth = dim
         this.initialHeight = height
       }
-      this.html.css({"width": this.initialWidth + "px", "height": this.initialHeight + "px"})
+      //this.html.css({"width": this.initialWidth + "px", "height": this.initialHeight + "px"})
       this.paper.setSize(this.initialWidth, this.initialHeight)
       this.setZoom(this.zoomFactor, false)
 
